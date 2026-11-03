@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-ready",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Static preflight for DeepSeek Harness plugin packages.",
   "license": "Apache-2.0",
   "type": "module",
@@ -18,7 +18,7 @@
     "CHANGELOG.md"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=24.9.0"
   },
   "repository": {
     "type": "git",
