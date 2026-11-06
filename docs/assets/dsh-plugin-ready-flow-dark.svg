@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-label="dsh-plugin-ready static preflight pipeline">
+<title>dsh-plugin-ready static preflight pipeline</title>
+<rect width="1200" height="450" rx="18" fill="#0d1117"/>
+<text x="56" y="62" fill="#f0f6fc" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif" font-size="30" font-weight="700">dsh-plugin-ready</text>
+<text x="56" y="94" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="15">static preflight &#183; dsh-ready &lt;dir&gt; &#8594; package.json &#8594; R1-R18 &#8594; report</text>
+<line x1="56" y1="116" x2="1144" y2="116" stroke="#30363d"/>
+<rect x="50" y="150" width="192" height="104" rx="14" fill="#161b22" stroke="#4B67B4" stroke-width="2"/>
+<text x="146" y="194" fill="#f0f6fc" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">dsh-ready &lt;dir&gt;</text>
+<text x="146" y="224" fill="#8b949e" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">npm i -g &#183; npx</text>
+<path d="M247 202H270" stroke="#8b949e" stroke-width="2.5"/>
+<path d="M266 196l8 6-8 6" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="282" y="150" width="192" height="104" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="378" y="194" fill="#f0f6fc" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">package.json</text>
+<text x="378" y="224" fill="#8b949e" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">name &#183; version &#183; entry</text>
+<path d="M479 202H502" stroke="#8b949e" stroke-width="2.5"/>
+<path d="M498 196l8 6-8 6" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="514" y="150" width="192" height="104" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="610" y="194" fill="#f0f6fc" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">R1-R18</text>
+<text x="610" y="224" fill="#8b949e" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">static checks</text>
+<path d="M711 202H734" stroke="#8b949e" stroke-width="2.5"/>
+<path d="M730 196l8 6-8 6" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="746" y="150" width="192" height="104" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="842" y="194" fill="#f0f6fc" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">static: pass</text>
+<text x="842" y="224" fill="#8b949e" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">warn &#183; fail &#183; --strict</text>
+<path d="M943 202H966" stroke="#8b949e" stroke-width="2.5"/>
+<path d="M962 196l8 6-8 6" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="978" y="150" width="192" height="104" rx="14" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+<text x="1074" y="194" fill="#f0f6fc" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">exit 0 | 2</text>
+<text x="1074" y="224" fill="#8b949e" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">report JSON</text>
+<rect x="50" y="292" width="1120" height="100" rx="14" fill="#161b22" stroke="#4B67B4" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M610 254v38" stroke="#4B67B4" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="74" y="326" fill="#4B67B4" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" font-weight="700">--host</text>
+<text x="74" y="350" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5">optional</text>
+<text x="180" y="330" fill="#f0f6fc" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13">dsh-clinic --repo &lt;dir&gt; --only X</text>
+<path d="M470 325H490" stroke="#8b949e" stroke-width="2.5"/>
+<path d="M486 319l8 6-8 6" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="515" y="330" fill="#f0f6fc" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13">host: pass | blocked | fail</text>
+<text x="760" y="330" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12">blocked &#8594; exit 3 &#183; fail &#8594; exit 2</text>
+<text x="180" y="364" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12">default: host not-run &#183; X is a contract check, not C3</text>
+<text x="650" y="364" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12">static pass &#8800; install / audit / certification</text>
+<text x="56" y="428" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12">--json &#183; --out &lt;file&gt; &#183; --strict &#183; --host &#183; exit 0 | 2 | 3</text>
+</svg>
