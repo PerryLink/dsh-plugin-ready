@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-dark.svg">
-  <img src="docs/assets/dsh-plugin-ready-flow-light.svg" width="100%" alt="Flujo de preflight estático de dsh-plugin-ready: dsh-ready lee el directorio del paquete, revisa package.json con R1-R18 e imprime el resultado estático y el código de salida; --host además ejecuta dsh-clinic X, una comprobación de contrato, no C3">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-hero-en-dark.webp">
+  <img src="docs/assets/dsh-plugin-ready-hero-en-light.webp" width="100%" alt="dsh-plugin-ready: preflight del paquete antes de instalarlo; 18 comprobaciones estáticas dan pass / warn / fail y un código de salida">
 </picture>
 
 # dsh-plugin-ready
@@ -42,6 +42,11 @@ npx dsh-plugin-ready .
 Se mantiene deliberadamente dentro de su alcance: no instala el plugin, no arranca DeepSeek Harness, no mide rendimiento, no audita seguridad ni certifica nada. Cuando necesites evidencia real de instalación en un host, ejecuta `dsh-dev test` o `dsh-test-drive` y entrega la evidencia a `entry-validate --host-evidence`. `--host` solo invoca `dsh-clinic --only X` como comprobación de contrato, y su salida dice claramente que no es C3.
 
 El nombre del paquete y el del comando difieren: el paquete npm es `dsh-plugin-ready` y el ejecutable es `dsh-ready` (ver `package.json#bin`). No hay paso de build: `bin/` y `src/` son los artefactos publicados.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="Máquina de estados de dsh-plugin-ready: entrada → puerta R1 (si falla, corta) → comprobaciones R2-R18 → tres estados de veredicto → exit 0 / 2 / 3; --host es una rama opcional, blocked da exit 3">
+</picture>
 
 ## Instalación en tres pasos
 
@@ -222,7 +227,7 @@ Porque este repositorio es un paquete CLI, no un plugin de DSH, y por tanto no t
 npm install                          # sin dependencias de ejecución; Node >= 24.9.0
 npm test                             # node --test test/*.test.js
 node bin/dsh-ready.js . --json       # ejecutar la CLI de este repositorio
-python scripts/gen-readme-assets.py  # regenerar los dos SVG hero (Python + Pillow)
+python scripts/gen-readme-assets.py  # regenerar los hero WebP y los SVG del flujo (Python + Pillow)
 ```
 
 | Ruta | Propósito |
@@ -231,8 +236,8 @@ python scripts/gen-readme-assets.py  # regenerar los dos SVG hero (Python + Pill
 | `src/ready.js` | `parse` / `check` / `report` / `runHost` / `main`; aquí viven R1–R18 |
 | `test/ready.test.js` | Casos de comprobación estática, `--strict` y R18 |
 | `test/host.test.js` | Casos de `--host` contra un `dsh-clinic` falso |
-| `scripts/gen-readme-assets.py` | Genera los SVG hero claro/oscuro; repetible |
-| `docs/assets/` | Salida: `dsh-plugin-ready-flow-{light,dark}.svg` |
+| `scripts/gen-readme-assets.py` | Genera los hero WebP y los SVG del flujo; repetible |
+| `docs/assets/` | Salida: `dsh-plugin-ready-hero-{zh,en}-{light,dark}.webp`, `dsh-plugin-ready-flow-v5-{light,dark}.svg` |
 | `.github/workflows/test.yml` | Ejecuta `npm test` en push / PR (matriz Node 20 / 24) |
 | `.github/workflows/release.yml` | Disparo manual; `npm publish --provenance` |
 

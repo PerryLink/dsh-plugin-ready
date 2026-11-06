@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-dark.svg">
-  <img src="docs/assets/dsh-plugin-ready-flow-light.svg" width="100%" alt="dsh-plugin-ready 静态预检流程：dsh-ready 读取目录 → package.json → R1–R18 → static 结果与退出码；--host 另跑 dsh-clinic X 契约检查，不是 C3">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-plugin-ready-hero-zh-light.webp" width="100%" alt="dsh-plugin-ready：装插件之前先验包，18 项静态检查逐条给出 pass / warn / fail 与退出码">
 </picture>
 
 # dsh-plugin-ready
@@ -42,6 +42,11 @@ npx dsh-plugin-ready .
 它刻意不越界：不安装插件、不启动 DeepSeek Harness、不跑性能测试、不做安全审计、不认证任何东西。需要真实宿主安装证据时，用 `dsh-dev test` 或 `dsh-test-drive` 跑一遍，再把证据交给 `entry-validate --host-evidence`；`--host` 只调用 `dsh-clinic --only X` 做契约检查，输出里明确写着「不是 C3」。
 
 包名与命令名不同：npm 包是 `dsh-plugin-ready`，可执行文件是 `dsh-ready`（见 `package.json#bin`）。没有构建步骤，发布物就是 `bin/` 与 `src/`。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="dsh-plugin-ready 状态机：入口 → R1 闸门（失败即短路）→ R2-R18 检查体 → 三态判定 → exit 0 / 2 / 3；--host 是可选支线，blocked 记 exit 3">
+</picture>
 
 ## 三步上手
 
@@ -222,7 +227,7 @@ dsh-ready <dir> ──▶ package.json ──▶ R1–R18 ──▶ static: pass
 npm install                          # 无运行时依赖；Node >=24.9.0
 npm test                             # node --test test/*.test.js
 node bin/dsh-ready.js . --json       # 直接跑本仓 CLI
-python scripts/gen-readme-assets.py  # 重出两份 hero SVG（Python + Pillow）
+python scripts/gen-readme-assets.py  # 重出 hero webp 与结构图 SVG（Python + Pillow）
 ```
 
 | 路径 | 作用 |
@@ -231,8 +236,8 @@ python scripts/gen-readme-assets.py  # 重出两份 hero SVG（Python + Pillow�
 | `src/ready.js` | `parse` / `check` / `report` / `runHost` / `main`；R1–R18 全在这里 |
 | `test/ready.test.js` | 静态检查、`--strict`、R18 的用例 |
 | `test/host.test.js` | 用假 `dsh-clinic` 覆盖 `--host` 的用例 |
-| `scripts/gen-readme-assets.py` | 生成深浅双版 hero SVG，可重复执行 |
-| `docs/assets/` | 生成物：`dsh-plugin-ready-flow-{light,dark}.svg` |
+| `scripts/gen-readme-assets.py` | 生成 hero webp 与结构图 SVG，可重复执行 |
+| `docs/assets/` | 生成物：`dsh-plugin-ready-hero-{zh,en}-{light,dark}.webp`、`dsh-plugin-ready-flow-v5-{light,dark}.svg` |
 | `.github/workflows/test.yml` | push / PR 跑 `npm test`（Node 20 / 24 矩阵） |
 | `.github/workflows/release.yml` | 手动触发，`npm publish --provenance` |
 

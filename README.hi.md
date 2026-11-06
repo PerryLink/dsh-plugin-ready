@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-dark.svg">
-  <img src="docs/assets/dsh-plugin-ready-flow-light.svg" width="100%" alt="dsh-plugin-ready स्टैटिक प्रीफ़्लाइट प्रवाह: dsh-ready पैकेज डायरेक्टरी पढ़ता है, package.json पर R1-R18 चलाता है और स्टैटिक नतीजा तथा exit कोड दिखाता है; --host अलग से dsh-clinic X चलाता है, जो कॉन्ट्रैक्ट जाँच है, C3 नहीं">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-hero-en-dark.webp">
+  <img src="docs/assets/dsh-plugin-ready-hero-en-light.webp" width="100%" alt="dsh-plugin-ready: इंस्टॉल से पहले पैकेज की जाँच; 18 स्टैटिक जाँचें pass / warn / fail और exit कोड देती हैं">
 </picture>
 
 # dsh-plugin-ready
@@ -42,6 +42,11 @@ npx dsh-plugin-ready .
 यह जानबूझकर अपनी सीमा में रहता है: प्लगइन इंस्टॉल नहीं करता, DeepSeek Harness शुरू नहीं करता, परफ़ॉर्मेंस नहीं मापता, सुरक्षा ऑडिट नहीं करता और किसी चीज़ का प्रमाणन नहीं करता। जब असली होस्ट-इंस्टॉल सबूत चाहिए, तो `dsh-dev test` या `dsh-test-drive` चलाएँ और सबूत `entry-validate --host-evidence` को दें। `--host` सिर्फ़ `dsh-clinic --only X` को कॉन्ट्रैक्ट जाँच के रूप में चलाता है, और उसका आउटपुट साफ़ कहता है कि यह C3 नहीं है।
 
 पैकेज का नाम और कमांड का नाम अलग हैं: npm पैकेज `dsh-plugin-ready` है और executable `dsh-ready` (देखें `package.json#bin`)। कोई build चरण नहीं है — `bin/` और `src/` ही प्रकाशित आर्टिफ़ैक्ट हैं।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-plugin-ready-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="dsh-plugin-ready स्टेट मशीन: प्रवेश → R1 गेट (विफल होने पर शॉर्ट-सर्किट) → R2-R18 जाँचें → तीन वर्डिक्ट अवस्थाएँ → exit 0 / 2 / 3; --host वैकल्पिक शाखा है, blocked का exit 3">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
@@ -222,7 +227,7 @@ dsh-ready <dir> ──▶ package.json ──▶ R1–R18 ──▶ static: pass
 npm install                          # कोई रनटाइम निर्भरता नहीं; Node >= 24.9.0
 npm test                             # node --test test/*.test.js
 node bin/dsh-ready.js . --json       # इस रेपो की CLI सीधे चलाएँ
-python scripts/gen-readme-assets.py  # दोनों hero SVG फिर बनाएँ (Python + Pillow)
+python scripts/gen-readme-assets.py  # hero WebP और flow SVG फिर बनाएँ (Python + Pillow)
 ```
 
 | पथ | उद्देश्य |
@@ -231,8 +236,8 @@ python scripts/gen-readme-assets.py  # दोनों hero SVG फिर बन
 | `src/ready.js` | `parse` / `check` / `report` / `runHost` / `main`; R1–R18 यहीं है |
 | `test/ready.test.js` | स्टैटिक जाँच, `--strict` और R18 के केस |
 | `test/host.test.js` | नकली `dsh-clinic` के साथ `--host` के केस |
-| `scripts/gen-readme-assets.py` | हल्के/गहरे hero SVG बनाता है; दोबारा चलाया जा सकता है |
-| `docs/assets/` | आउटपुट: `dsh-plugin-ready-flow-{light,dark}.svg` |
+| `scripts/gen-readme-assets.py` | hero WebP और flow SVG बनाता है; दोबारा चलाया जा सकता है |
+| `docs/assets/` | आउटपुट: `dsh-plugin-ready-hero-{zh,en}-{light,dark}.webp`, `dsh-plugin-ready-flow-v5-{light,dark}.svg` |
 | `.github/workflows/test.yml` | push / PR पर `npm test` (Node 20 / 24 मैट्रिक्स) |
 | `.github/workflows/release.yml` | मैन्युअल ट्रिगर; `npm publish --provenance` |
 
