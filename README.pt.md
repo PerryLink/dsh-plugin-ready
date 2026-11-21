@@ -48,6 +48,11 @@ O nome do pacote e o do comando diferem: o pacote npm é `dsh-plugin-ready` e o 
   <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="Máquina de estados do dsh-plugin-ready: entrada → porta R1 (falha curto-circuita) → checagens R2-R18 → três estados de veredito → exit 0 / 2 / 3; --host é um ramo opcional, blocked vira exit 3">
 </picture>
 
+![dsh-plugin-ready: execução real de terminal](docs/assets/dsh-plugin-ready-demo.gif)
+
+*Repetição animada de uma execução real deste repositório (2026-11-21).*
+
+
 ## Instalação em três passos
 
 1. **Instalar** (Node >= 24.9.0; sem dependências em tempo de execução):

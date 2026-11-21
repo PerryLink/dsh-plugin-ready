@@ -48,6 +48,11 @@ El nombre del paquete y el del comando difieren: el paquete npm es `dsh-plugin-r
   <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="Máquina de estados de dsh-plugin-ready: entrada → puerta R1 (si falla, corta) → comprobaciones R2-R18 → tres estados de veredicto → exit 0 / 2 / 3; --host es una rama opcional, blocked da exit 3">
 </picture>
 
+![dsh-plugin-ready: ejecución real de terminal](docs/assets/dsh-plugin-ready-demo.gif)
+
+*Repetición animada de una ejecución real de este repositorio (2026-11-21).*
+
+
 ## Instalación en tres pasos
 
 1. **Instalar** (Node >= 24.9.0; sin dependencias en tiempo de ejecución):

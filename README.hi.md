@@ -48,6 +48,11 @@ npx dsh-plugin-ready .
   <img src="docs/assets/dsh-plugin-ready-flow-v5-light.svg" width="100%" alt="dsh-plugin-ready स्टेट मशीन: प्रवेश → R1 गेट (विफल होने पर शॉर्ट-सर्किट) → R2-R18 जाँचें → तीन वर्डिक्ट अवस्थाएँ → exit 0 / 2 / 3; --host वैकल्पिक शाखा है, blocked का exit 3">
 </picture>
 
+![dsh-plugin-ready का असली टर्मिनल रन](docs/assets/dsh-plugin-ready-demo.gif)
+
+*इस रिपॉज़िटरी के असली रन का एनिमेटेड रीप्ले (2026-11-21)।*
+
+
 ## तीन चरणों में शुरुआत
 
 1. **इंस्टॉल करें** (Node >= 24.9.0; कोई रनटाइम निर्भरता नहीं):

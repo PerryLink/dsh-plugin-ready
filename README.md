@@ -50,6 +50,11 @@ npx dsh-plugin-ready .
 
 ## 三步上手
 
+
+![dsh-plugin-ready 真实终端运行](docs/assets/dsh-plugin-ready-demo.gif)
+
+*本仓库真实运行的动图回放（2026-11-21）。*
+
 1. **安装**（Node ≥24.9.0；零运行时依赖）：
 
    ```sh

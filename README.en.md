@@ -50,6 +50,11 @@ The package name and the command name differ: the npm package is `dsh-plugin-rea
 
 ## Three-step setup
 
+
+![dsh-plugin-ready: real terminal run](docs/assets/dsh-plugin-ready-demo.gif)
+
+*Animated replay of a real run in this repository (2026-11-21).*
+
 1. **Install** (Node >= 24.9.0; zero runtime dependencies):
 
    ```sh
